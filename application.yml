@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: rabbit
+  cloud:
+    stream:
+      binders:
+        rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: rabbitmq
+                port: 5672
+                username: guest
+                password: guest    

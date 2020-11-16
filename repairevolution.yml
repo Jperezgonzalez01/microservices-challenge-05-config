@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: sendEvolvedIncidenceToIncidenceManager
+      bindings:
+        sendEvolvedIncidenceToIncidenceManager-in-0:
+          destination: queue.incidences.to_evolve
+          content-type: application/json
+          binder: ${com.acme.automotive.currentBinder}
+        sendEvolvedIncidenceToIncidenceManager-out-0:
+          destination: queue.incidences.evolved
+          content-type: application/json
+          binder: ${com.acme.automotive.currentBinder}
+
+com:
+  acme:
+    automotive:
+      status: IN_PROGRESS,READY,WITHOUT_SOLUTION
+      

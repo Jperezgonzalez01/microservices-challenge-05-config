@@ -1,0 +1,4 @@
+com:
+  acme:
+    automotive:
+      currentBinder: kafka

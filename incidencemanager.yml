@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        incidences-unprocessed:
+          destination: queue.incidences.unprocessed
+          binder: ${com.acme.automotive.currentBinder}
+        incidences-to_assign:
+          destination: queue.incidences.to_assign
+          binder: ${com.acme.automotive.currentBinder}
+        incidences-assigned:
+          destination: queue.incidences.assigned
+          binder: ${com.acme.automotive.currentBinder}
+        incidences-to_evolve:
+          destination: queue.incidences.to_evolve
+          binder: ${com.acme.automotive.currentBinder}
+        incidences-evolved:
+          destination: queue.incidences.evolved
+          binder: ${com.acme.automotive.currentBinder}
+        incidences-ready:
+          destination: queue.incidences.ready
+          binder: ${com.acme.automotive.currentBinder}
+        incidences-without_solution:
+          destination: queue.incidences.without_solution
+          binder: ${com.acme.automotive.currentBinder}
+
+com:
+  acme:
+    automotive:
+      incidencereceiver:
+        # Number of milliseconds for a message sent to enter in a timeout
+        default-timeout: 5000
+        # Number of seconds a incidence is hold when its status is "IN PROGRESS"
+        seconds-to-wait: 120
+        #Number of milliseconds the ScheduleIncidencesTask waits to check if must send incidences
+        check-period: 1000

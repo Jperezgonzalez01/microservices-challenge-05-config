@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        incidences-unprocessed:
+          destination: queue.incidences.unprocessed
+          binder: ${com.acme.automotive.currentBinder}
+
+com:
+  acme:
+    automotive:
+      incidencereceiver:
+        default-timeout: 5000

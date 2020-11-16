@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: sendAssignedIncidenceToIncidenceManager
+      bindings:
+        sendAssignedIncidenceToIncidenceManager-in-0:
+          destination: queue.incidences.to_assign
+          content-type: application/json
+          binder: ${com.acme.automotive.currentBinder}
+        sendAssignedIncidenceToIncidenceManager-out-0:
+          destination: queue.incidences.assigned
+          content-type: application/json
+          binder: ${com.acme.automotive.currentBinder}
+
+com:
+  acme:
+    automotive:
+      teams: team-aqua,team-magma,team-rocket
+      defaultStartStatus: ASSIGNED

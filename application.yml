@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: rabbit
   cloud:
     stream:
       binders:
@@ -12,4 +10,11 @@ spring:
                 host: rabbitmq
                 port: 5672
                 username: guest
-                password: guest    
+                password: guest
+        kafka:
+          type: kafka
+          environment:
+            spring:
+              kafka:
+                binder:
+                  brokers: 172.40.0.6:9092,172.40.0.7:9092  

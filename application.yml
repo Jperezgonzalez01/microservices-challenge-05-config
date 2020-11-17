@@ -17,4 +17,4 @@ spring:
             spring:
               kafka:
                 binder:
-                  brokers: 172.40.0.6:9092,172.40.0.7:9092  
+                  brokers: 172.41.0.6:9092,172.41.0.7:9092  

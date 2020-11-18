@@ -1,6 +1,7 @@
 spring:
   cloud:
     stream:
+      defaultBinder: ${com.acme.automotive.currentBinder}
       binders:
         rabbit:
           type: rabbit

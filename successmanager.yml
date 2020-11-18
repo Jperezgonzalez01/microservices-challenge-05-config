@@ -11,6 +11,5 @@ spring:
         definition: receiveSuccessfulIncidence
       bindings:
         receiveSuccessfulIncidence-in-0:
-          destination: queue.incidences.ready
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.ready
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}

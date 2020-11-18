@@ -6,8 +6,7 @@ spring:
     stream:
       bindings:
         incidences-unprocessed:
-          destination: queue.incidences.unprocessed
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.unprocessed
 
 com:
   acme:

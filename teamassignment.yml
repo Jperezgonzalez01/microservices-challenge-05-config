@@ -5,13 +5,11 @@ spring:
         definition: sendAssignedIncidenceToIncidenceManager
       bindings:
         sendAssignedIncidenceToIncidenceManager-in-0:
-          destination: queue.incidences.to_assign
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.to_assign
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}
         sendAssignedIncidenceToIncidenceManager-out-0:
-          destination: queue.incidences.assigned
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.assigned
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}
 
 com:
   acme:

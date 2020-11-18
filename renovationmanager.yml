@@ -11,10 +11,8 @@ spring:
         definition: processIncidenceWithoutSolution
       bindings:
         processIncidenceWithoutSolution-in-0:
-          destination: queue.incidences.without_solution
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.without_solution
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}
         processIncidenceWithoutSolution-out-0:
-          destination: queue.incidences.external
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.external
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}

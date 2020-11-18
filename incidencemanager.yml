@@ -3,26 +3,19 @@ spring:
     stream:
       bindings:
         incidences-unprocessed:
-          destination: queue.incidences.unprocessed
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.unprocessed
         incidences-to_assign:
-          destination: queue.incidences.to_assign
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.to_assign
         incidences-assigned:
-          destination: queue.incidences.assigned
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.assigned
         incidences-to_evolve:
-          destination: queue.incidences.to_evolve
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.to_evolve
         incidences-evolved:
-          destination: queue.incidences.evolved
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.evolved
         incidences-ready:
-          destination: queue.incidences.ready
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.ready
         incidences-without_solution:
-          destination: queue.incidences.without_solution
-          binder: ${com.acme.automotive.currentBinder}
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.without_solution
 
 com:
   acme:

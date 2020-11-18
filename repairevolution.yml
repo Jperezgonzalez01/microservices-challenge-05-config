@@ -5,13 +5,11 @@ spring:
         definition: sendEvolvedIncidenceToIncidenceManager
       bindings:
         sendEvolvedIncidenceToIncidenceManager-in-0:
-          destination: queue.incidences.to_evolve
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.to_evolve
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}
         sendEvolvedIncidenceToIncidenceManager-out-0:
-          destination: queue.incidences.evolved
+          destination: ${com.acme.automotive.currentExchangeType}.incidences.evolved
           content-type: application/json
-          binder: ${com.acme.automotive.currentBinder}
 
 com:
   acme:

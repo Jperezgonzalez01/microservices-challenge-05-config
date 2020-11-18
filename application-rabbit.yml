@@ -2,3 +2,4 @@ com:
   acme:
     automotive:
       currentBinder: rabbit
+      currentExchangeType: queue

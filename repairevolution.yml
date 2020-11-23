@@ -6,10 +6,10 @@ spring:
       bindings:
         sendEvolvedIncidenceToIncidenceManager-in-0:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.to_evolve
-          content-type: application/json
+          contentType: application/*+avro
         sendEvolvedIncidenceToIncidenceManager-out-0:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.evolved
-          content-type: application/json
+          contentType: application/*+avro
 
 com:
   acme:

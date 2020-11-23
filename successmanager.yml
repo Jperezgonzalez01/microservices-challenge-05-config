@@ -12,4 +12,4 @@ spring:
       bindings:
         receiveSuccessfulIncidence-in-0:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.ready
-          content-type: application/json
+          contentType: application/*+avro

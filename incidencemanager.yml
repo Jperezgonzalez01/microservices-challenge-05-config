@@ -7,16 +7,22 @@ spring:
           contentType: application/*+avro
         incidences-to_assign:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.to_assign
+          contentType: application/*+avro
         incidences-assigned:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.assigned
+          contentType: application/*+avro
         incidences-to_evolve:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.to_evolve
+          contentType: application/*+avro
         incidences-evolved:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.evolved
+          contentType: application/*+avro
         incidences-ready:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.ready
+          contentType: application/*+avro
         incidences-without_solution:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.without_solution
+          contentType: application/*+avro
 
 com:
   acme:

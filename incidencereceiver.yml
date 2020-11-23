@@ -7,6 +7,7 @@ spring:
       bindings:
         incidences-unprocessed:
           destination: ${com.acme.automotive.currentExchangeType}.incidences.unprocessed
+          contentType: application/*+avro
 
 com:
   acme:

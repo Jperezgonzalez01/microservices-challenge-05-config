@@ -4,17 +4,8 @@ spring:
       default:
         consumer:
           useNativeEncoding: true
-        consumer-properties:
-          key.serializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-          value.serializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-          schema.registry.url: http://schema-registry-ch5:8081
-          specific.avro.reader: true
         producer:
           useNativeEncoding: true
-        producer-properties:
-          key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
-          value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
-          schema.registry.url: http://schema-registry-ch5:8081
       defaultBinder: ${com.acme.automotive.currentBinder}
       binders:
         rabbit:
@@ -35,3 +26,12 @@ spring:
                   kafka:
                     binder:
                       brokers: 172.41.0.6:9092,172.41.0.7:9092
+                      producer-properties:
+                        key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+                        value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+                        schema.registry.url: http://schema-registry-ch5:8081
+                      consumer-properties:
+                        key.serializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                        value.serializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                        schema.registry.url: http://schema-registry-ch5:8081
+                        specific.avro.reader: true
